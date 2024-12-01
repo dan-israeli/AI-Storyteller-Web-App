@@ -74,7 +74,7 @@ Follow these steps to set up and run the AI Storyteller Web App:
    - `OpenAI.txt`
 3. Add the corresponding API key to each file:
    - Get an OpenAI API key: https://openai.com/blog/openai-api
-   - Get an ElevenLabs API key: (free) https://elevenlabs.io/api
+   - Get an ElevenLabs API key: https://elevenlabs.io/api
 
 ---
 
