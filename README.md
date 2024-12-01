@@ -2,7 +2,11 @@
 
 ## Overview 
 
-The AI Storyteller Web App is a Flask-powered platform that brings the magic of storytelling to life through cutting-edge AI technology. Designed to create customized, interactive stories for children, this application provides a seamless user experience with built-in narration, a library for managing and sharing stories, and robust user authentication. By integrating with state-of-the-art APIs and leveraging a reliable SQLite3 database, the project showcases the fusion of creativity and technology.
+This project is an AI-powered storytelling web app, developed using Flask, designed to create personalized and interactive stories for children. It features built-in narration, a library for managing and sharing favorite stories, and secure user authentication, ensuring an engaging and user-friendly experience.
+
+In building this application, I integrated APIs such as OpenAI for story generation and ElevenLabs for natural-sounding narration. The project also incorporates a SQLite3 database for efficient data storage and retrieval. These technical elements allowed me to explore key aspects of backend development, API integration, and database management.
+
+This project demonstrates my ability to design and develop practical applications that merge creativity with technology. In addition, it showcases my skills in designing a system with multiple interconnected components and integrating them seamlessly to work together as a smooth application.
 
 ---
 
@@ -13,6 +17,10 @@ During the story creation phase, users can choose the story's location, genre, a
 
 ### **Built-in Narration**  
 To enhance the storytelling experience, the app uses the ElevenLabs API to provide natural-sounding, AI-powered narration. This feature allows users to listen to their stories being read aloud, bringing them to life in a new dimension.
+
+### **Regeneration Button**  
+The app includes a **Regeneration Button** feature, allowing users to rewrite a specific section of a story they are not satisfied with. This functionality gives users the flexibility to modify sections without starting over, ensuring the story aligns with their preferences. It enhances creativity and control during the storytelling process, making the experience more dynamic and user-friendly.
+
 
 ### **Customizable Settings**  
 The app offers a range of settings to further tailor the storytelling experience to user preferences, including:  
