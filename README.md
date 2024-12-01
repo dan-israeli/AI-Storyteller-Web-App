@@ -32,8 +32,8 @@ The app offers a range of settings to further tailor the storytelling experience
 ### **Library for Managing and Sharing Stories**  
 The app offers a dedicated library, where users can:
 - Save a newly created story.
-- Manage their collection (e.g. view, delete).
-- Share their favoriate stories via email directly from the app.
+- Manage story collection (e.g. view, delete).
+- Share favoriate stories via email directly from the app.
 
 ### **Database**  
 The app relies on a lightweight yet powerful SQLite3 database to store essintial information such as user data, stories, and more. This ensures fast and reliable access to data while keeping the project easy to deploy and maintain.
@@ -51,21 +51,19 @@ Follow these steps to set up and run the AI Storyteller Web App:
 
 ### 1. **Download the Files**
 - Download all files from the `code` directory.
-- Ensure all files are located in the same directory on your local machine.
+- Ensure all files downloaded are located in the `code` directory on your local machine.
 
 ---
 
 ### 2. **Set Up the Database**
-1. Create a new SQLite database named `database.db`.
-2. Place the `database.db` file in the `code` directory.
-3. Run the `db_tables.py` file to create the necessary database tables.
+1. Create a new SQLite database named `database.db`. in the `code` directory.
+2. Run the `db_tables.py` file to create the necessary database tables.
 
 ---
 
 ### 3. **Set Up Email Credentials**
-1. Create a text file named `email.txt`.
+1. Create a text file named `email.txt` in the `code/static` directory.
 2. Add the email and password of the account you want to use (each in a new line).
-3. Place the `email.txt` file in the `code/static` directory.
 
 ---
 
