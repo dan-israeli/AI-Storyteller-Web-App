@@ -58,7 +58,7 @@ Follow these steps to set up and run the AI Storyteller Web App:
 ### 2. **Set Up the Database**
 1. Create a new SQLite database named `database.db`.
 2. Place the `database.db` file in the `code` directory.
-3. Run the `db.py` file to create the necessary database tables.
+3. Run the `db_tables.py` file to create the necessary database tables.
 
 ---
 
