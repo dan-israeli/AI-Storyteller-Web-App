@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Saved Story
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="top-navigation-buttons">
+            <a href="/library">
+                <button class="icon-button" aria-label="Book">📚</button>
+            </a>
+        </div>
+        <h1 class="curly-headline">{{ row["title"] }}</h1>
+    </div>
+        <br>
+        <p> {{ row["story"] | replace('\n', '<br>') | safe }}</p>
+{% endblock %}

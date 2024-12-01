@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Bubblegum+Sans&family=Mystery+Quest&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px; /* Add some padding to make sure the content is not too close to the edges */
+    font-family: 'Andika', sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.login-action-button {
+  background-color: #1E88E5; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Add padding */
+  font-size: 14px; /* Font size */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.login-action-button:hover {
+  background-color: #1565C0; /* Darker blue on hover */
+  transform: translateY(-2px); /* Lift the button slightly on hover */
+}
+
+.top-navigation-buttons {
+    position: absolute; /* Use absolute positioning */
+    top: 10px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    display: flex;
+    gap: 15px;
+}
+
+.top-right-button-container {
+  position: absolute; /* Position the container absolutely */
+  top: 10px; /* Distance from the top of the page */
+  right: 10px; /* Distance from the right side of the page */
+  width: auto; /* Adjust width to fit the content */
+}
+
+.top-right-button {
+  background-color: #FF6F61; /* Background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for the button */
+  font-size: 14px; /* Font size */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.logout-button:hover {
+  background-color: #E53935; /* Darker color on hover */
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: #FF4D4D; /* Bright red color for the delete button */
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon-button:hover {
+  transform: scale(1.2); /* Increase size on hover */
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.curly-headline {
+    font-family: Mystery Quest, cursive;
+    font-size: 48px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.get-started-button {
+    background-color: #6A5ACD; /* A soft purple color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 15px 30px; /* Add some padding */
+    font-size: 18px; /* Increase font size */
+    border-radius: 10px; /* Round the corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.2s, box-shadow 0.2s; /* Add smooth transition */
+    margin-top: 50px;
+}
+
+.get-started-button:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.settings-container {
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      height: 80vh; /* Full height of the viewport */
+}
+
+.settings-panel {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center; /* Align text and toggle vertically */
+  justify-content: space-between; /* Space between text and toggle */
+  margin-bottom: 30px; /* Space between items */
+}
+
+.settings-action-button {
+  background: linear-gradient(90deg, #6A5ACD, #4169E1); /* Gradient from soft purple to royal blue */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 12px 25px; /* Adjust padding for a balanced look */
+  font-size: 16px; /* Font size */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+.settings-action-button:hover {
+  transform: translateY(-3px); /* Lift the button slightly on hover */
+  box-shadow: 0 8px 20px rgba(106, 90, 205, 0.3); /* Add a soft shadow */
+}
+
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom:5px;
+}
+
+input[type="range"] {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.slider-value {
+    font-size: 16px;
+    color: #ff4d4d;
+}
+
+.toggle {
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    background-color: #ddd;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.toggle:checked {
+    background-color: #ff4d4d;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.toggle:checked::before {
+    transform: translateX(20px);
+}
+
+.info-icon {
+    font-size: 18px;
+    color: #ff4d4d;
+    cursor: pointer;
+    position: relative;
+}
+
+.info-icon:hover::after {
+    content: "Voice guidance will read instructions when needed, and buttons' content when clicked."; /* Text for the tooltip */
+    position: absolute;
+    bottom: 100%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+.file-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.file-upload-label {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-upload-label:hover {
+    background-color: #0056b3;
+}
+
+.file-upload-input {
+    display: none;
+}
+
+.library-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  gap: 20px; /* Space between items */
+  margin-top: 30px; /* Add space from the top */
+}
+
+.library-item {
+  display: flex;
+  align-items: center; /* Align text and delete button */
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 500px; /* Limit width */
+  width: 100%; /* Full width */
+  justify-content: space-between; /* Space between text and delete button */
+}
+
+.library-item-story-button {
+  background-color: #f5f5f5; /* Light gray background */
+  color: #333; /* Darker text color */
+  border: none; /* Remove default border */
+  padding: 12px 8px; /* Add padding for a button-like appearance */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  text-align: left; /* Align text to the left */
+  width: 100%; /* Make the button take the full width of the container */
+}
+
+.library-item-story-button:hover {
+  transform: translateY(-2px); /* Lift slightly on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.library-item-action-buttons-container{
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+}
+
+.library-item-action-button{
+  background-color: transparent; /* Remove background */
+  border: none; /* Remove border */
+  color: #FF4D4D; /* Bright red color for the delete button */
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.library-item-action-button:hover {
+  transform: scale(1.2); /* Increase size on hover */
+}
+
+.email-popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.email-popup-content {
+  text-align: center;
+}
+
+.close-button {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#email-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.location-image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+.location-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.location-image-highlighted {
+    border: 4px solid red;
+}
+
+.button-navigation-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center; /* Center the buttons vertically if needed */
+  gap: 100px; /* Space between the buttons */
+  margin-top: 20px; /* Add some space above the buttons if needed */
+}
+
+.genre-button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.genre-button {
+  background-color: white; /* White background for normal state */
+  color: black; /* Black text */
+  border: 2px solid black; /* Black border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px 30px; /* Padding for button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.genre-button:hover {
+  background-color: #E3F2FD; /* Light blue background on hover */
+  color: #1E88E5; /* Blue text on hover */
+  border-color: #1E88E5; /* Blue border on hover */
+}
+
+.genre-button-highlighted {
+    background-color: #1E88E5; /* Blue background when selected */
+    color: white; /* White text when selected */
+    border-color: #1E88E5; /* Blue border when selected */
+}
+
+.create-button {
+  background: linear-gradient(90deg, #42A5F5, #1E88E5); /* Blue gradient background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 7px; /* Rounded corners */
+  padding: 10px 20px; /* Add some padding */
+  font-size: 16px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.create-button:hover {
+  transform: translateY(-2px); /* Lift the button slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.option-button {
+  background-color: #1E88E5;
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px 30px; /* Add padding */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px; /* Space between buttons */
+  text-align: center; /* Center the text */
+}
+
+.option-button:hover {
+  transform: translateY(-3px); /* Lift the button on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.regen-button {
+    background: none;
+    border: none;
+    color: #FF4D4D; /* Bright red color for the delete button */
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+.regen-button:hover {
+  transform: scale(1.2); /* Increase size on hover */
+}
+
+.regen-button:hover::after {
+    content: "Click the button to regerate section."; /* Text for the tooltip */
+    position: absolute;
+    bottom: 100%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+.story-end-action-button {
+  background-color: #1E88E5; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 12px 25px; /* Padding for button */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: inline-flex; /* Flex for alignment */
+  align-items: center; /* Center text and icon */
+  gap: 8px; /* Space between text and icon */
+}
+
+.story-end-action-button:hover {
+  background-color: #1565C0; /* Darker blue on hover */
+  transform: translateY(-3px); /* Lift the button on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+
+#loading-screen {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dimmed background */
+  z-index: 1000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Spinner Animation */
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #1E88E5; /* Gradient color */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.2s linear infinite;
+  margin-bottom: 15px; /* Space between spinner and text */
+}
+
+/* Text Styling */
+.loading-text {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+

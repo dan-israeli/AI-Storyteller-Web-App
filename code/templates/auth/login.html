@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="top-right-button-container">
+            <a href="/register">
+                <button class="top-right-button">Register</button>
+            </a>
+        </div>
+        <h1 class="curly-headline">Your Adventure Awaits</h1>
+
+        <form action="/login" method="Post">
+            <div class="form-container">
+                <label for="username">
+                    <input autocomplete="off" autofocus name="username" placeholder="Username" type="text">
+                </label>
+            </div>
+            <div class="form-container">
+                <label for="password">
+                    <input autofocus name="password" placeholder="Password" type="password">
+                </label>
+            </div>
+            <br>
+            <button type="submit" class="login-action-button">Log In</button>
+        </form>
+        <div class="container">
+            {% with errors = get_flashed_messages(category_filter=["error"]) %}
+                {% if errors %}
+                    <p>{%  for error in errors %}{{ error }}<br>{% endfor %}</p>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}

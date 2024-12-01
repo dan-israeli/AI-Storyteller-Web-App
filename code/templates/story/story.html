@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Location
+{% endblock %}
+
+{% block main %}
+    <div class="top-navigation-buttons">
+        <a href="/">
+            <button class="icon-button" aria-label="Home">🏠</button>
+        </a>
+    </div>
+
+    <div class="container">
+        <h1 class="curly-headline"> {{ title }}</h1>
+    </div>
+
+    <p> {{ current_section | replace('\n', '<br>') | safe }}</p>
+
+    <audio id="audioPlayer" autoplay></audio>
+
+    {% if is_story_audio %}
+        <script>
+            playAudio({{ current_section | tojson}}, {{ speaker | tojson}});
+        </script>
+    {% endif %}
+
+    {% if num_sections_left > 0 %}
+        <div class="button-navigation-buttons">
+            <button class="option-button" onclick="generateSection('Option 1')">Option 1</button>
+            <button class="option-button" onclick="generateSection('Option 2')">Option 2</button>
+            <button class="regen-button" onclick="generateSection('regen')">🔄</button>
+        </div>
+
+    {% else %}
+        <div class="button-navigation-buttons">
+            <a href="/story_end">
+                <button class="icon-button">✅</button>
+            </a>
+        </div>
+    {% endif %}
+
+    <div id="loading-screen">
+      <div class="spinner"></div>
+      <p class="loading-text">Creating Next Section...</p>
+    </div>
+{% endblock %}

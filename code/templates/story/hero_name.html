@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Location
+{% endblock %}
+
+{% block main %}
+    <h1 class="curly-headline">Story's Hero</h1>
+    <h2>Please Choose a name for your main character:</h2>
+    <br>
+    <label for="hero_name">
+        <input type="text" id="hero_name-input" placeholder="Get ready to cheer for the amazing hero:" style="width: 300px; height: 30px;">
+    </label>
+    <button class="create-button" onclick="setStorySetting('hero_name'); generateSection('initial')">Create! 📖</button>
+    <br>
+    <p>Not sure? You can always click on the right arrow, and I will choose a name for you!</p>
+        <a href="/genre">
+            <button class="icon-button">⬅️</button>
+        </a>
+    <audio id="audioPlayer" autoplay></audio>
+
+    {% if is_voice_guidance %}
+        <script>
+            const text = "Please choose a name for your main character. You can always click the right arrow, and I will choose it for you!"
+            playAudio(text, "{{ speaker }}")
+        </script>
+    {% endif %}
+
+    <div id="loading-screen">
+      <div class="spinner"></div>
+      <p class="loading-text">Creating Story...</p>
+    </div>
+{% endblock %}

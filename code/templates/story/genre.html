@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Location
+{% endblock %}
+
+{% block main %}
+    <h1 class="curly-headline">Story's Genre</h1>
+    <h2>Please Choose a genre for your story:</h2>
+    <br>
+
+    <div class="genre-button-container">
+        <div class="genre-button" data-value="Adventure">Adventure</div>
+        <div class="genre-button" data-value="Science Fiction">Science Fiction</div>
+        <div class="genre-button" data-value="Mystery">Mystery</div>
+        <div class="genre-button" data-value="Fantasy">Fantasy</div>
+        <div class="genre-button" data-value="Fairy Tale">Fairy Tale</div>
+        <div class="genre-button" data-value="Animals">Animals</div>
+    </div>
+
+    <input type="hidden" id="genre-input">
+    <audio id="audioPlayer" autoplay></audio>
+
+    {% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {% if errors %}
+            <p>{%  for error in errors %}{{ error }}<br>{% endfor %}</p>
+        {% endif %}
+    {% endwith %}
+
+    <div class="button-navigation-buttons">
+        <a href="/location">
+            <button class="icon-button">⬅️</button>
+        </a>
+        <a href="/hero_name">
+            <button class="icon-button" onclick="setStorySetting('genre')">➡️</button>
+        </a>
+    </div>
+
+    <script>
+        updateInput("genre-button", "genre-input", {{ is_voice_guidance | tojson }})
+    </script>
+
+    {% if is_voice_guidance %}
+        <script>
+            const text = "Please choose a genre for your story by clicking a button. When you are done, click the right arrow button at the bottom."
+            playAudio(text, "{{ speaker }}")
+        </script>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Location
+{% endblock %}
+
+{% block main %}
+    <h1 class="curly-headline">Story's Location</h1>
+    <h2>Please Choose a location for your story:</h2>
+
+    <div class="location-image-grid">
+        <img src="/static/images/enchanted_forest.png" alt="Enchanted Forest" data-value="Enchanted Forest" class="location-image">
+        <img src="/static/images/deserted_island.png" alt="Deserted Island" data-value="Deserted Island" class="location-image">
+        <img src="/static/images/faraway_kingdom.png" alt="Faraway Kingdom" data-value="Faraway Kingdom" class="location-image">
+        <img src="/static/images/thrilling_ocean.png" alt="Thrilling Ocean" data-value="Thrilling Ocean" class="location-image">
+        <img src="/static/images/north_pole.png" alt="North Pole" data-value="North Pole" class="location-image">
+        <img src="/static/images/outer_space.png" alt="Outer Space" data-value="Outer Space" class="location-image">
+        <img src="/static/images/wild_west.png" alt="Wild West" data-value="Wild West" class="location-image">
+        <img src="/static/images/haunted_castle.png" alt="Haunted Castle" data-value="Haunted Castle" class="location-image">
+        <img src="/static/images/magical_school.png" alt="Magical School" data-value="Magical School" class="location-image">
+    </div>
+
+    <input type="hidden" id="location-input">
+    <audio id="audioPlayer" autoplay></audio>
+
+    {% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {% if errors %}
+            <p>{%  for error in errors %}{{ error }}<br>{% endfor %}</p>
+        {% endif %}
+    {% endwith %}
+
+    <div class="button-navigation-buttons">
+        <a href="/">
+            <button class="icon-button">🏠</button>
+        </a>
+        <a href="/genre">
+            <button class="icon-button" onclick="setStorySetting('location')">➡️</button>
+        </a>
+    </div>
+
+    <script>
+        updateInput("location-image", "location-input", {{ is_voice_guidance | tojson }})
+    </script>
+
+    {% if is_voice_guidance %}
+        <script>
+            const text = "Please choose a location for your story by clicking an image. When you are done, click the right arrow button at the bottom."
+            playAudio(text, "{{ speaker }}");
+        </script>
+    {% endif %}
+
+{% endblock %}

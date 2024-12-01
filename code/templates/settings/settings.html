@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="top-navigation-buttons">
+            <a href="/">
+                <button class="icon-button" aria-label="Home">🏠</button>
+            </a>
+        </div>
+        <h1 class="curly-headline">General Settings</h1>
+        <div class="settings-container">
+            <div class="settings-panel">
+                <audio id="audioPlayer" autoplay></audio>
+
+                <div class="setting-item">
+                    <label for="speaker">Speaker:</label>
+                    <select id="speaker" name="speaker" onchange="updateSetting('speaker')">
+                        {% for speaker in speakers %}
+                            <option {% if speaker == session["speaker"] %} selected {% endif %}> {{ speaker }} </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="story-sections">Number of Story Sections:</label>
+                    <input type="range" id="story_sections" name="story_sections" min="3" max="7" onchange=updateSetting("story_sections") value={{ session["story_sections"] | tojson}}>
+                    <span id="story_sections_value">{{ session["story_sections"] | tojson }}</span>
+                </div>
+
+                <div class="setting-item">
+                    <label for="story-audio">Story Audio:</label>
+                    <input type="checkbox" id="story_audio" name="story_audio" class="toggle" onchange="updateSetting('story_audio')" {% if session["story_audio"] %} checked {% endif %}>
+                </div>
+
+                <div class="setting-item">
+                    <label for="voice-guidance">Voice Guidance:</label>
+                    <input type="checkbox" id="voice_guidance" name="voice_guidance" class="toggle" onchange="updateSetting('voice_guidance')" {% if session["voice_guidance"] %} checked {% endif %}>
+                    <span class="info-icon">❓</span>
+                </div>
+
+                <br>
+
+                <a href="/settings/custom_voice">
+                    <button class="settings-action-button">Create Custom Voice! 🎤</button>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

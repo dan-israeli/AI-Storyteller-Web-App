@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Library
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="top-navigation-buttons">
+            <a href="/">
+                <button class="icon-button" aria-label="Home">🏠</button>
+            </a>
+        </div>
+        <h1 class="curly-headline">Welcome to Your Library! 📚</h1>
+        <h2>Here is some of your best work:</h2>
+        <div class="library-container">
+            {% for row in rows %}
+              <div class="library-item">
+                  <button class="library-item-story-button" onclick="getStory({{ row['id'] }})">{{ row["title"] }}</button>
+                  <div class="library-item-action-buttons-container">
+                      <button class="library-item-action-button" onclick="deleteStory({{ row['id'] }})">❌</button>
+                      <button class="library-item-action-button" onclick="openEmailInput({{ row['id'] }})">📩</button>
+                  </div>
+              </div>
+            {% endfor %}
+
+              <div id="email-popup" class="email-popup">
+                <div class="email-popup-content">
+                  <span class="close-button" onclick="closeEmailInput()">&times;</span>
+                  <p>Enter Email Address:</p>
+                  <input type="hidden" id="email-story-id">
+                  <input type="email" id="email-input" placeholder="example@example.com">
+                  <button onclick="submitEmail()">Submit</button>
+              </div>
+        </div>
+    </div>
+{% endblock %}
